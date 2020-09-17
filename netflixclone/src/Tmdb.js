@@ -22,7 +22,7 @@ const basicFetch = async (endpoint) => {
 
 
 export default {
-    getHomeList: async() => {
+    getHomeList: async () => {
         return [
             {
                 slug: 'originals',
@@ -65,5 +65,27 @@ export default {
                 items: await basicFetch(`/discover/movie?with_genres=99&language=${LANG}&api_key=${API_KEY}`)
             },
         ]
+    },
+
+    getShowInfo: async (id, type) => {
+        let info = {};
+
+        if (id) {
+            switch (type) {
+                case 'movie':
+                    info = await basicFetch(`/movie/${id}?language=${LANG}&api_key=${API_KEY}`);
+                    break;
+
+                case 'tv':
+                    info = await basicFetch(`/tv/${id}?language=${LANG}&api_key=${API_KEY}`);
+                    break;
+                
+                default:
+                    info = null;
+                    break;
+            }
+        }
+
+        return info;
     }
 }
