@@ -9,7 +9,7 @@ export default ({ black }) => {
                 
             </div>
             <div className="header--user">
-                <img src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png" alt="Profile Picture"/>
+                <img src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png" alt="Profile"/>
             </div>
         </header >
     );
